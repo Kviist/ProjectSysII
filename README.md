@@ -2,4 +2,4 @@
 Projct for Systemutveckling II Malmö Museum
 
 Link to all documentation
-https://drive.google.com/drive/folders/1Vzt9XWJj3JZwdqIEdcfN7qJBjn-4Qjca
+https://docs.google.com/document/d/1SD9BvmMUsm6PFSCHY_joa6HHKXoXlJS8ConUlDw89LQ/edit?usp=sharing
