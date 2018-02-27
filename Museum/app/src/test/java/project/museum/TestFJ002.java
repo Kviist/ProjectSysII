@@ -2,10 +2,10 @@ package project.museum;
 
 import org.junit.Test;
 
-public class FJ004 {
+public class TestFJ002 {
 
     @Test
-    public void FJ004_JU1() {
+    public void FJ002_JU1() {
 
     }
 }
