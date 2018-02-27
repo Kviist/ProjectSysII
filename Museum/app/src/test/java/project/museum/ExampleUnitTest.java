@@ -1,4 +1,4 @@
-package projekt.museum;
+package project.museum;
 
 import org.junit.Test;
 

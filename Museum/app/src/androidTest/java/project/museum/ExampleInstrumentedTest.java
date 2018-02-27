@@ -1,4 +1,4 @@
-package projekt.museum;
+package project.museum;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("projekt.museum", appContext.getPackageName());
+        assertEquals("project.museum", appContext.getPackageName());
     }
 }
