@@ -16,40 +16,35 @@ public class TestFJ004 {
     //Done
     @Test
     public void FJ004_JU1(){
-        User user = new User("Alla123", "pEl1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Switch views to Start", user);
+        String output = login.registerCheck("Alla123", "pEl1","pEl1", "pellekanot@gmail.com");
+        assertEquals("Switch views to Start", output);
     }
 
     //Done
     @Test
     public void FJ004_JU2(){
-        User user = new User("Alla123", "pEl1pEl1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Switch views to Start", user);
+        String output = login.registerCheck("Alla123", "pEl1pEl1","pEl1pEl1", "pellekanot@gmail.com");
+        assertEquals("Switch views to Start", output);
     }
 
     //Done
     @Test
     public void FJ004_JU3(){
-        User user = new User("Alla123", "peel1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Password is missing uppercase", user);
+        String output = login.registerCheck("Alla123", "peel1","peel1", "pellekanot@gmail.com");
+        assertEquals("Password is missing uppercase", output);
     }
 
     //Done
     @Test
     public void FJ004_JU4(){
-        User user = new User("Alla123", "pE1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Password is too short", user);
+        String output = login.registerCheck("Alla123", "pE1", "pE1", "pellekanot@gmail.com");
+        assertEquals("Password is too short", output);
     }
 
     //Done
     @Test
     public void FJ004_JU5() {
-        User user = new User("Alla123", "pE1pe1pe1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Password is too long", user);
+        String output = login.registerCheck("Alla123", "pE1pe1pe1", "pE1pe1pe1", "pellekanot@gmail.com");
+        assertEquals("Password is too long", output);
     }
 }

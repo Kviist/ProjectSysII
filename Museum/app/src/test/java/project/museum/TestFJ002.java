@@ -16,32 +16,28 @@ public class TestFJ002 {
     //Done
     @Test
     public void FJ002_JU1(){
-        User user = new User("Alla1", "pelle1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Switch views to Start", user);
+        String output = login.registerCheck("Alla1", "pelle1","pelle1", "pellekanot@gmail.com");
+        assertEquals("Switch views to Start", output);
     }
 
     //Done
     @Test
     public void FJ002_JU2(){
-        User user = new User("Allan1239111", "pelle1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Switch views to Start", user);
+        String output = login.registerCheck("Allan1239111", "pelle1", "pelle1", "pellekanot@gmail.com");
+        assertEquals("Switch views to Start", output);
     }
 
     //Done
     @Test
     public void FJ002_JU3(){
-        User user = new User("All1", "pelle1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Username is too short", user);
+        String output = login.registerCheck("All1", "pelle1","pelle1", "pellekanot@gmail.com");
+        assertEquals("Username is too short", output);
     }
 
     //Done
     @Test
     public void FJ002_JU4(){
-        User user = new User("Allan1239111a", "pelle1", "pellekanot@gmail.com");
-        String output = login.registerCheck(user);
-        assertEquals("Username is too long", user);
+        String output = login.registerCheck("Allan1239111a", "pelle1","pelle1", "pellekanot@gmail.com");
+        assertEquals("Username is too long", output);
     }
 }

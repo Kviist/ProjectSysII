@@ -52,8 +52,7 @@ public class Login extends AppCompatActivity {
         return false;
     }
 
-    public String registerCheck(User user) {
-
+    public String registerCheck(String username, String password1, String password2, String email) {
         return null;
     }
 

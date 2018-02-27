@@ -16,14 +16,12 @@ public class TestFJ005 {
     }
     @Test
     public void TestFJ005_JU1(){
-        User user =  new User("Greger33", "password", "Hejkonbejkon@gmail.com");
-        String output = login.registerCheck(user);
+        String output = login.registerCheck("Greger33", "password","passwordd", "Hejkonbejkon@gmail.com");
         assertEquals("Password doesnt match",output);
     }
     @Test
     public void TestFJ005_JU2(){
-        User user =  new User("Greger33", "password", "Hejkonbejkon@gmail.com");
-        String output = login.registerCheck(user);
+        String output = login.registerCheck("Greger33", "password", "password", "Hejkonbejkon@gmail.com");
         assertEquals("Switch views to start",output);
     }
 }
