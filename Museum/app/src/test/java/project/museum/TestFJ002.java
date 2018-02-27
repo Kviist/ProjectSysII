@@ -13,6 +13,7 @@ public class TestFJ002 {
         login = new Login();
     }
 
+    //Done
     @Test
     public void FJ002_JU1(){
         User user = new User("Alla1", "pelle1", "pellekanot@gmail.com");
@@ -20,6 +21,7 @@ public class TestFJ002 {
         assertEquals("Switch views to Start", user);
     }
 
+    //Done
     @Test
     public void FJ002_JU2(){
         User user = new User("Allan1239111", "pelle1", "pellekanot@gmail.com");
@@ -27,6 +29,7 @@ public class TestFJ002 {
         assertEquals("Switch views to Start", user);
     }
 
+    //Done
     @Test
     public void FJ002_JU3(){
         User user = new User("All1", "pelle1", "pellekanot@gmail.com");
@@ -34,6 +37,7 @@ public class TestFJ002 {
         assertEquals("Username is too short", user);
     }
 
+    //Done
     @Test
     public void FJ002_JU4(){
         User user = new User("Allan1239111a", "pelle1", "pellekanot@gmail.com");
