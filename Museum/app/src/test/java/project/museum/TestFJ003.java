@@ -16,6 +16,7 @@ public class TestFJ003 {
         login = new Login();
     }
 
+    //Done
     @Test
     public void TestFJ003U1(){
         User user = new User("Greger33", "password", "greger.nilsson1@gmail.com");
@@ -23,6 +24,7 @@ public class TestFJ003 {
         assertEquals("Switch view to Start", output);
     }
 
+    //Done
     @Test
     public void TestFJ003U2(){
         User user = new User("Greger33", "password","greger.nilssongmail.swedenland");

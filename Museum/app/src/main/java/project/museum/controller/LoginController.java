@@ -45,6 +45,14 @@ public class LoginController {
                 }
             }
         }
+
+        p = Pattern.compile("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$");
+        m = p.matcher(user.getEmail());
+
+        if(!m.matches()){
+            return "Switch view to Start";
+        }
+
         return "Switch views to Start";
     }
 }
