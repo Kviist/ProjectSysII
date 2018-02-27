@@ -14,9 +14,9 @@ import project.museum.controller.LoginController;
 public class Login extends AppCompatActivity {
     private String username, password;
     private Language language = Language.SV;
-    private boolean sound;
+    private boolean sound = true;
     private User newUser;
-    private LoginController controller;
+    private LoginController controller = new LoginController();
     private RegisterFragment fragment;
 
     private enum Language {
@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         fragment = new RegisterFragment();
-        controller = new LoginController();
+        // controller = new LoginController();
     }
 
     public void loginClick(View view) {
@@ -53,7 +53,12 @@ public class Login extends AppCompatActivity {
     }
 
     public String registerCheck(String username, String password1, String password2, String email) {
-        return null;
+
+        if(!(password1.equals(password2))){
+            return "Password doesnt match";
+        }
+
+        return controller.registerCheck(username, password1, email);
     }
 
     public boolean toggleSound() {

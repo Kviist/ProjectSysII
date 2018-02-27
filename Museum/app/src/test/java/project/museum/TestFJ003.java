@@ -19,14 +19,14 @@ public class TestFJ003 {
     //Done
     @Test
     public void TestFJ003U1(){
-        String output = login.registerCheck("Greger33", "password","password", "greger.nilsson1@gmail.com");
-        assertEquals("Switch view to Start", output);
+        String output = login.registerCheck("Greger33", "Password","Password", "greger.nilsson1@gmail.com");
+        assertEquals("Switch views to Start", output);
     }
 
     //Done
     @Test
     public void TestFJ003U2(){
-        String output = login.registerCheck("Greger33", "password",  "password", "greger.nilssongmail.swedenland");
+        String output = login.registerCheck("Greger33", "Password",  "Password", "greger.nilssongmail.swedenland");
         assertEquals("Invalid email",output);
     }
 

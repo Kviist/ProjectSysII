@@ -16,14 +16,14 @@ public class TestFJ002 {
     //Done
     @Test
     public void FJ002_JU1(){
-        String output = login.registerCheck("Alla1", "pelle1","pelle1", "pellekanot@gmail.com");
+        String output = login.registerCheck("Alla1", "Pelle1","Pelle1", "pellekanot@gmail.com");
         assertEquals("Switch views to Start", output);
     }
 
     //Done
     @Test
     public void FJ002_JU2(){
-        String output = login.registerCheck("Allan1239111", "pelle1", "pelle1", "pellekanot@gmail.com");
+        String output = login.registerCheck("Allan1239111", "Pelle1", "Pelle1", "pellekanot@gmail.com");
         assertEquals("Switch views to Start", output);
     }
 
