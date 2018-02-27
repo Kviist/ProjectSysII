@@ -13,16 +13,18 @@ public class TestFJ001 {
         login = new Login();
     }
 
+    //Done
     @Test
     public void FJ001_JU1(){
         String output = login.changeLanguage();
-        assertEquals("SV", output);
+        assertEquals("EN", output);
     }
 
+    //Done
     @Test
     public void FJ001_JU2(){
         login.changeLanguage();
         String output = login.changeLanguage();
-        assertEquals("EN", output);
+        assertEquals("SV", output);
     }
 }

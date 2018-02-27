@@ -29,6 +29,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         fragment = new RegisterFragment();
+        controller = new LoginController();
     }
 
     public void loginClick(View view) {
@@ -52,6 +53,7 @@ public class Login extends AppCompatActivity {
     }
 
     public String registerCheck(User user) {
+
         return null;
     }
 
