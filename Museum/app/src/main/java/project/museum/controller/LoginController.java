@@ -1,4 +1,4 @@
 package project.museum.controller;
 
-public class UserController {
+public class LoginController {
 }
