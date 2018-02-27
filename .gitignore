@@ -19,7 +19,7 @@
 *.rar
 
 # Intellij
-.idea/
+Museum\.idea\*
 *.iws
 *.iml
 
