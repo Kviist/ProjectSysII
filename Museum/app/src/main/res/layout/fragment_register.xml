@@ -1,0 +1,88 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="project.museum.RegisterFragment"
+             android:id="@+id/FrameRegister"
+             android:visibility="visible"
+             android:background="@android:color/background_light"
+             android:clickable="true">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTextRegName"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                android:hint="Name"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/editTextRegEmail"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextRegName"
+                android:hint="Email"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:layout_marginTop="9dp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextRegEmail"
+                android:id="@+id/editTextRegPass1"
+                android:hint="Password"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editTextRegPass2"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextRegPass1"
+                android:hint="Password"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <Button
+                android:text="Register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonRegister"
+                android:layout_marginTop="28dp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextRegPass2"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="@+id/editTextRegPass2"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="@+id/editTextRegPass2"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
