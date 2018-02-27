@@ -1,12 +1,10 @@
 package project.museum;
 
-import org.junit.Before;
 import org.junit.*;
-import project.museum.view.LoginActivity;
+import project.museum.view.Login;
 import static org.junit.Assert.assertEquals;
 
 public class TestFJ001 {
-
 
     private Login login;
 
@@ -24,7 +22,7 @@ public class TestFJ001 {
     @Test
     public void FJ001_JU2(){
         login.changeLanguage();
-        String output = login.changeLanguge();
+        String output = login.changeLanguage();
         assertEquals("Engelska", output);
     }
 }
