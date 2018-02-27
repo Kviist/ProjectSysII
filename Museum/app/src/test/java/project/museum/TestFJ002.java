@@ -31,13 +31,13 @@ public class TestFJ002 {
     public void FJ002_JU3(){
         User user = new User("All1", "pelle1", "pellekanot@gmail.com");
         String output = login.registerCheck(user);
-        assertEquals("Username is to short", user);
+        assertEquals("Username is too short", user);
     }
 
     @Test
     public void FJ002_JU4(){
         User user = new User("Allan1239111a", "pelle1", "pellekanot@gmail.com");
         String output = login.registerCheck(user);
-        assertEquals("Username is to long", user);
+        assertEquals("Username is too long", user);
     }
 }
