@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Museum</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Lösenord (valfritt)</string>
+    <string name="action_sign_in">Logga in eller registrera</string>
+    <string name="action_sign_in_short">Logga in</string>
+    <string name="error_invalid_email">Denna email är inte giltig</string>
+    <string name="error_invalid_password">Lösenordet är för kort</string>
+    <string name="error_incorrect_password">Lösenordet är inkorrekt</string>
+    <string name="error_field_required">Detta fältet måste vara ifryllt</string>
+    <string name="permission_rationale">"Hej min vän"</string>
+</resources>
