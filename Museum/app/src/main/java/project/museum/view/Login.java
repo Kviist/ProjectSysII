@@ -1,6 +1,7 @@
 package project.museum.view;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 import project.museum.R;
 import project.museum.RegisterFragment;
 import project.museum.controller.LoginController;
+
+import java.util.Locale;
 
 public class Login extends AppCompatActivity {
     private String username, password;
@@ -109,14 +112,23 @@ public class Login extends AppCompatActivity {
     }
 
     public String changeLanguage() {
+        Locale locale;
         switch(language) {
             case SV:
                 language = Language.EN;
+                locale = new Locale("en_US");
                 break;
             case EN:
                 language = Language.SV;
+                locale = new Locale("sv_SV");
                 break;
+            default:
+                locale = new Locale("en_US");
         }
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getApplicationContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         return language.toString();
     }
 }
