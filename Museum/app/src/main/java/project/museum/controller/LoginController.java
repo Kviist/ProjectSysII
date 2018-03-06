@@ -3,9 +3,12 @@ package project.museum.controller;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import project.museum.User;
-
 public class LoginController {
+    private String name = "KallePuling", pass = "kAl1kAl1";
+
+    public boolean loginCheck(String username, String password) {
+        return (username.equals(name) && password.equals(pass));
+    }
 
     public String registerCheck(String username, String password, String email){
         Pattern p;

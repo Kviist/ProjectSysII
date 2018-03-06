@@ -1,5 +1,6 @@
 package project.museum.view;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +9,12 @@ import android.view.View;
 import android.widget.EditText;
 import project.museum.R;
 import project.museum.RegisterFragment;
-import project.museum.User;
 import project.museum.controller.LoginController;
 
 public class Login extends AppCompatActivity {
     private String username, password;
     private Language language = Language.SV;
     private boolean sound = true;
-    private User newUser;
     private LoginController controller = new LoginController();
     private RegisterFragment fragment;
 
@@ -29,7 +28,6 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         fragment = new RegisterFragment();
-        // controller = new LoginController();
     }
 
     public void loginClick(View view) {
@@ -37,6 +35,12 @@ public class Login extends AppCompatActivity {
         username = text.getText().toString();
         text = (EditText)findViewById(R.id.editTextPassword);
         password = text.getText().toString();
+        if (loginCheck(username, password)) {
+            Intent intent = new Intent(this, Start.class);
+            startActivity(intent);
+        } else {
+
+        }
     }
 
     public void registerClick(View view) {
@@ -46,15 +50,26 @@ public class Login extends AppCompatActivity {
         fragmentTransaction.replace(android.R.id.content, fragment, "register")
                 .addToBackStack("register").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
 
+        EditText text = (EditText)findViewById(R.id.editTextRegName);
+        String u = text.getText().toString();
+        text = (EditText)findViewById(R.id.editTextRegPass1);
+        String p1 = text.getText().toString();
+        text = (EditText)findViewById(R.id.editTextRegPass2);
+        String p2 = text.getText().toString();
+        text = (EditText)findViewById(R.id.editTextRegEmail);
+        String e = text.getText().toString();
+
+        registerCheck(u, p1, p2, e);
+
     }
 
     public boolean loginCheck(String username, String password) {
-        return false;
+        return controller.loginCheck(username, password);
     }
 
     public String registerCheck(String username, String password1, String password2, String email) {
 
-        if(!(password1.equals(password2))){
+        if(!(password1.equals(password2))) {
             return "Password doesnt match";
         }
 
