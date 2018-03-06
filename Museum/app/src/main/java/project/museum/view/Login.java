@@ -5,8 +5,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 import project.museum.R;
 import project.museum.RegisterFragment;
 import project.museum.controller.LoginController;
@@ -24,6 +27,13 @@ public class Login extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -37,10 +47,18 @@ public class Login extends AppCompatActivity {
         password = text.getText().toString();
         if (loginCheck(username, password)) {
             Intent intent = new Intent(this, Start.class);
+            intent.putExtra("username", username);
             startActivity(intent);
         } else {
-
+            Toast.makeText(this, "Username or password incorrect.", Toast.LENGTH_LONG).show();
+            System.out.println("Username or password incorrect.");
         }
+    }
+
+    public void guestClick(View view) {
+        Intent intent = new Intent(this, Start.class);
+        intent.putExtra("username", "Guest");
+        startActivity(intent);
     }
 
     public void registerClick(View view) {
@@ -49,7 +67,9 @@ public class Login extends AppCompatActivity {
 
         fragmentTransaction.replace(android.R.id.content, fragment, "register")
                 .addToBackStack("register").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+    }
 
+    public void registerSend(View view) {
         EditText text = (EditText)findViewById(R.id.editTextRegName);
         String u = text.getText().toString();
         text = (EditText)findViewById(R.id.editTextRegPass1);
@@ -59,8 +79,15 @@ public class Login extends AppCompatActivity {
         text = (EditText)findViewById(R.id.editTextRegEmail);
         String e = text.getText().toString();
 
-        registerCheck(u, p1, p2, e);
-
+        String reg = registerCheck(u, p1, p2, e);
+        if (reg.equals("Switch views to Start")) {
+            Intent intent = new Intent(this, Start.class);
+            intent.putExtra("username", u);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, reg, Toast.LENGTH_LONG).show();
+            System.out.println(reg);
+        }
     }
 
     public boolean loginCheck(String username, String password) {

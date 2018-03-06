@@ -81,7 +81,8 @@
                 android:layout_marginLeft="8dp"
                 app:layout_constraintLeft_toLeftOf="@+id/editTextRegPass2"
                 android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="@+id/editTextRegPass2"/>
+                app:layout_constraintRight_toRightOf="@+id/editTextRegPass2"
+                android:onClick="registerSend"/>
 
     </android.support.constraint.ConstraintLayout>
 
