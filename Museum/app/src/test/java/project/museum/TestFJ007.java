@@ -16,14 +16,21 @@ public class TestFJ007 {
     //Done
     @Test
     public void FJ007_JU1(){
-        boolean output = login.loginCheck("Kalle Puling", "kAl1kAl1");
+        boolean output = login.loginCheck("KallePuling", "kAl1kAl1");
         assertEquals(true ,output);
     }
 
     //Done
     @Test
     public void FJ007_JU2(){
-        boolean output = login.loginCheck("Kalle Puing", "kAl1kAl1");
+        boolean output = login.loginCheck("KallePuing", "kAl1kAl1");
+        assertEquals(false ,output);
+    }
+
+    //Done
+    @Test
+    public void FJ007_JU3(){
+        boolean output = login.loginCheck("KallePuling", "kAl1kAl11");
         assertEquals(false ,output);
     }
 }
