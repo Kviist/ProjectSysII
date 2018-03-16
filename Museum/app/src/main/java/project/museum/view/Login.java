@@ -2,15 +2,18 @@ package project.museum.view;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import project.museum.AboutFragment;
 import project.museum.R;
 import project.museum.RegisterFragment;
 import project.museum.controller.LoginController;
@@ -22,7 +25,8 @@ public class Login extends AppCompatActivity {
     private Language language = Language.SV;
     private boolean sound = true;
     private LoginController controller = new LoginController();
-    private RegisterFragment fragment;
+    private RegisterFragment registerFragment;
+    private AboutFragment aboutFragment;
 
     private enum Language {
         SV,
@@ -37,10 +41,27 @@ public class Login extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch(menuItem.getItemId()) {
+            case R.id.changeLanguage:
+                changeLanguage(menuItem);
+                return true;
+            case R.id.toggleSound:
+                toggleSound(menuItem);
+                return true;
+            case R.id.about:
+                about();
+                return true;
+        }
+        return super.onOptionsItemSelected(menuItem);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        fragment = new RegisterFragment();
+        registerFragment = new RegisterFragment();
+        aboutFragment = new AboutFragment();
     }
 
     public void loginClick(View view) {
@@ -68,7 +89,7 @@ public class Login extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(android.R.id.content, fragment, "register")
+        fragmentTransaction.replace(android.R.id.content, registerFragment, "register")
                 .addToBackStack("register").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
 
@@ -106,29 +127,53 @@ public class Login extends AppCompatActivity {
         return controller.registerCheck(username, password1, email);
     }
 
-    public boolean toggleSound() {
+    public boolean toggleSound(MenuItem menuItem) {
+        Drawable myDrawable;
+        if(sound) {
+            myDrawable = getResources().getDrawable(R.drawable.volume_mute); // The ID of your drawable.
+            Toast.makeText(this, "Sound Off", Toast.LENGTH_SHORT).show();
+        } else {
+            myDrawable = getResources().getDrawable(R.drawable.volume_high); // The ID of your drawable.
+            Toast.makeText(this, "Sound On", Toast.LENGTH_SHORT).show();
+        }
         sound = !sound;
+        menuItem.setIcon(myDrawable);
         return sound;
     }
 
-    public String changeLanguage() {
-        Locale locale;
+    public String changeLanguage(MenuItem menuItem) {
+        Drawable myDrawable;
         switch(language) {
             case SV:
                 language = Language.EN;
-                locale = new Locale("en_US");
+                myDrawable = getResources().getDrawable(R.drawable.if_flag_sweden2x_748117);
+                Toast.makeText(this, "English", Toast.LENGTH_SHORT).show();
                 break;
             case EN:
                 language = Language.SV;
-                locale = new Locale("sv_SV");
+                myDrawable = getResources().getDrawable(R.drawable.if_flag_united_kingdom_748024);
+                Toast.makeText(this, "Svenska", Toast.LENGTH_SHORT).show();
                 break;
             default:
-                locale = new Locale("en_US");
+                language = Language.EN;
+                myDrawable = getResources().getDrawable(R.drawable.if_flag_sweden2x_748117);
+                Toast.makeText(this, "default", Toast.LENGTH_SHORT).show();
         }
+        Locale locale = new Locale(language.toString());
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
-        getApplicationContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        menuItem.setIcon(myDrawable);
+        setContentView(R.layout.activity_login);
         return language.toString();
+    }
+
+    public void about() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(android.R.id.content, aboutFragment, "about")
+                .addToBackStack("about").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
 }

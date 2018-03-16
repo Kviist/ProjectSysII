@@ -16,17 +16,17 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".view.Login"
-                android:label="@string/title_activity_login">
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.Start">
+        <activity android:name=".view.Start"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.Question">
+        <activity android:name=".view.Question"
+                  android:screenOrientation="portrait">
         </activity>
     </application>
-
 </manifest>

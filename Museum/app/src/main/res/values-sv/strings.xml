@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Museum</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Logga in</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -10,6 +10,20 @@
     <string name="error_invalid_email">Denna email är inte giltig</string>
     <string name="error_invalid_password">Lösenordet är för kort</string>
     <string name="error_incorrect_password">Lösenordet är inkorrekt</string>
-    <string name="error_field_required">Detta fältet måste vara ifryllt</string>
-    <string name="permission_rationale">"Hej min vän"</string>
+    <string name="error_field_required">Detta fältet måste vara ifyllt</string>
+    <string name="permission_rationale">Hej min vän</string>
+    <string name="toggle_sound">Slå på/av ljud</string>
+    <string name="change_language">Byta språk till engelska</string>
+    <string name="login_button">Logga in</string>
+    <string name="login_name">Namn</string>
+    <string name="login_password">Lösenord</string>
+    <string name="login_register">Registrera</string>
+    <string name="login_guest">Gäst</string>
+    <string name="register_button">Registrera</string>
+    <string name="register_name">Namn</string>
+    <string name="register_email">Email</string>
+    <string name="register_password1">Lösenord</string>
+    <string name="register_password2">Lösenord</string>
+    <string name="welcome">"Välkommen "</string>
+    <string name="about">Skapad av Jonathan Kvist, Nils Lindkvist, Petter Månsson och Pontus Mathiasson</string>
 </resources>

@@ -14,6 +14,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/textViewStartUsername"/>
+            android:id="@+id/textViewStartUsername"
+            android:text="@string/welcome"/>
 
 </android.support.constraint.ConstraintLayout>

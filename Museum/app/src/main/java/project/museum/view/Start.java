@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 import project.museum.R;
 
 public class Start extends AppCompatActivity {
@@ -19,7 +20,12 @@ public class Start extends AppCompatActivity {
         username = intent.getExtras().getString("username");
 
         textView = (TextView) findViewById(R.id.textViewStartUsername);
-        textView.setText("Welcome " + username);
+        textView.setText(textView.getText() + username);
+    }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Logged out", Toast.LENGTH_LONG).show();
+        super.onBackPressed();
     }
 }

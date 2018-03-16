@@ -11,5 +11,19 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="permission_rationale">Contacts permissions are needed for providing email completions.</string>
+    <string name="toggle_sound">Toggle sound</string>
+    <string name="change_language">Change language to Swedish</string>
+    <string name="login_button">Login</string>
+    <string name="login_name">Name</string>
+    <string name="login_password">Password</string>
+    <string name="login_register">Register</string>
+    <string name="login_guest">Guest</string>
+    <string name="register_button">Register</string>
+    <string name="register_name">Name</string>
+    <string name="register_email">Email</string>
+    <string name="register_password1">Password</string>
+    <string name="register_password2">Password</string>
+    <string name="welcome">"Welcome "</string>
+    <string name="about">Created by Jonathan Kvist, Nils Lindkvist, Petter Månsson and Pontus Mathiasson</string>
 </resources>

@@ -7,7 +7,8 @@
         android:layout_height="match_parent"
         tools:context="project.museum.view.Login"
         tools:layout_editor_absoluteY="81dp"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        android:configChanges="locale">
 
     <EditText
             android:layout_width="0dp"
@@ -15,7 +16,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editTextName"
-            android:hint="Name"
+            android:hint="@string/login_name"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="77dp"
             android:layout_marginLeft="64dp"
@@ -30,7 +31,7 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/editTextPassword"
-            android:hint="Password"
+            android:hint="@string/login_password"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/editTextName"
             android:layout_marginLeft="64dp"
@@ -40,11 +41,11 @@
             app:layout_constraintHorizontal_bias="0.503"/>
 
     <Button
-            android:text="Login"
+            android:text="@string/login_button"
             android:layout_height="wrap_content"
             android:id="@+id/buttonLogin"
             android:layout_width="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
             android:layout_marginLeft="0dp"
             app:layout_constraintLeft_toLeftOf="@+id/editTextPassword"
@@ -52,7 +53,7 @@
             />
 
     <Button
-            android:text="Register"
+            android:text="@string/login_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonGotoRegister"
@@ -63,7 +64,7 @@
             android:onClick="registerClick"/>
 
     <Button
-            android:text="Guest Login"
+            android:text="@string/login_guest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonGuest"
@@ -73,6 +74,38 @@
             app:layout_constraintRight_toRightOf="@+id/buttonGotoRegister"
             android:layout_marginTop="80dp"
             app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintHorizontal_bias="0.513"
             android:onClick="guestClick"/>
+
+    <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/malmo_stad_logo"
+            android:id="@+id/imageViewMalmo"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonGuest"/>
+
+    <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/eu_logo"
+            android:id="@+id/imageViewEU"
+            app:layout_constraintRight_toLeftOf="@+id/imageViewSC"
+            android:layout_marginRight="16dp"
+            app:layout_constraintLeft_toRightOf="@+id/imageViewMalmo"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonGuest"/>
+
+    <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/science_center_malmo_logo"
+            android:id="@+id/imageViewSC"
+            android:layout_marginRight="32dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonGuest"/>
 </android.support.constraint.ConstraintLayout>
