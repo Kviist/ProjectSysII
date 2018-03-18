@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Fragment for showing a brief info-text about the app.
+ */
 public class AboutFragment extends Fragment {
 
     @Override

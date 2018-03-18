@@ -5,26 +5,27 @@ import java.util.regex.Pattern;
 
 /**
  * Class that handles the logic and communication for a login
+ * Stub, to be implemented
  */
 public class LoginController {
     private String name = "KallePuling", pass = "kAl1kAl1";
 
     /**
-     * Controlls if the user and password matches user in database
+     * Controls if the user and password matches user in database
      * @param username - username login
      * @param password - password for the user
-     * @return - true if user exists otherwise false
+     * @return true if user exists otherwise false
      */
     public boolean loginCheck(String username, String password) {
         return (username.equals(name) && password.equals(pass));
     }
 
     /**
-     * method for checking if the wished upon registration is valid
+     * Method for checking if the wished upon registration is valid
      * @param username - wished upon username
      * @param password - wished upon password
      * @param email - users email
-     * @return - String with poteltial error or sucess
+     * @return String with potential error or success
      */
     public String registerCheck(String username, String password, String email){
         Pattern p;

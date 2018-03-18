@@ -7,6 +7,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import project.museum.R;
 
+/**
+ * View-class for the logged in, starting page part of the system.
+ * Stub, to be implemented
+ */
 public class Start extends AppCompatActivity {
     private String username;
     private TextView textView;

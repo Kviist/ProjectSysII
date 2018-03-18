@@ -20,6 +20,9 @@ import project.museum.controller.LoginController;
 
 import java.util.Locale;
 
+/**
+ * View-class for the login/register part of the system.
+ */
 public class Login extends AppCompatActivity {
     private String username, password;
     private Language language = Language.SV;
@@ -64,6 +67,10 @@ public class Login extends AppCompatActivity {
         aboutFragment = new AboutFragment();
     }
 
+    /**
+     * Method that is called when the user clicks on the login-button.
+     * @param view
+     */
     public void loginClick(View view) {
         EditText text = (EditText)findViewById(R.id.editTextName);
         username = text.getText().toString();
@@ -79,12 +86,20 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method that is called when the user clicks on the guest-button.
+     * @param view
+     */
     public void guestClick(View view) {
         Intent intent = new Intent(this, Start.class);
         intent.putExtra("username", "Guest");
         startActivity(intent);
     }
 
+    /**
+     * Method that is called when the user clicks on the register-button. Sends the user to register-view
+     * @param view
+     */
     public void registerClick(View view) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -93,6 +108,10 @@ public class Login extends AppCompatActivity {
                 .addToBackStack("register").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
 
+    /**
+     * Sends a request to register a new user in the database.
+     * @param view
+     */
     public void registerSend(View view) {
         EditText text = (EditText)findViewById(R.id.editTextRegName);
         String u = text.getText().toString();
@@ -114,10 +133,24 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the username and password exists in the database and is correct.
+     * @param username the username
+     * @param password the password for the user
+     * @return true if login was correct, else false
+     */
     public boolean loginCheck(String username, String password) {
         return controller.loginCheck(username, password);
     }
 
+    /**
+     *
+     * @param username the desired username
+     * @param password1 the desired password
+     * @param password2 needs to match password1
+     * @param email the email for the user
+     * @return String with potential error or success
+     */
     public String registerCheck(String username, String password1, String password2, String email) {
 
         if(!(password1.equals(password2))) {
@@ -127,6 +160,11 @@ public class Login extends AppCompatActivity {
         return controller.registerCheck(username, password1, email);
     }
 
+    /**
+     * Toggles the sound on or off
+     * @param menuItem
+     * @return true if sound was toggled on, false if toggled off
+     */
     public boolean toggleSound(MenuItem menuItem) {
         Drawable myDrawable;
         if(sound) {
@@ -141,6 +179,11 @@ public class Login extends AppCompatActivity {
         return sound;
     }
 
+    /**
+     * Changes the language between Swedish and English
+     * @param menuItem
+     * @return the language selected
+     */
     public String changeLanguage(MenuItem menuItem) {
         Drawable myDrawable;
         switch(language) {
@@ -169,6 +212,9 @@ public class Login extends AppCompatActivity {
         return language.toString();
     }
 
+    /**
+     * Sends the user to about-view
+     */
     public void about() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

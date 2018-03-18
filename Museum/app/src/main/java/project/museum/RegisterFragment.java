@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Fragment for inputting user info to register on the database.
+ */
 public class RegisterFragment extends Fragment {
 
     @Override

@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import project.museum.R;
 
+/**
+ * View-class for the quiz part of the system.
+ * To be implemented
+ */
 public class Question extends AppCompatActivity {
 
     @Override
